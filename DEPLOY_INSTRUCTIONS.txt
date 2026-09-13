@@ -1,0 +1,49 @@
+================================================================
+ CARA DEPLOY KE INFINITYFREE - (OpsI C: CRUD di Root)
+================================================================
+
+Struktur final:
+  - farshalaravel.free.nf            -> Portofolio (route / Laravel)
+  - farshalaravel.free.nf/login      -> halaman login CRUD
+  - farshalaravel.free.nf/dashboard  -> dashboard CRUD
+
+CRUD & portofolio satu aplikasi Laravel di ROOT htdocs/.
+
+File siap upload:
+  1. deploy-core.zip            (2 MB)   -> File Manager, extract di htdocs/
+  2. deploy-assets-template.zip (6 MB)   -> File Manager, extract di htdocs/
+  3. deploy/vendor/            (±57 MB)  -> WAJIB FileZilla ke htdocs/vendor/
+  4. portfolio-assets/         (isi)     -> File Manager/FileZilla ke htdocs/portfolio-assets/
+
+LANGKAH:
+
+1) BUAT DATABASE
+   Panel -> MySQL Databases -> Create Database.
+   Catat: host/sqlXXX, nama db, username, password.
+
+2) UPLOAD
+   a. Extract deploy-core.zip di htdocs/
+   b. Extract deploy-assets-template.zip di htdocs/
+   c. FileZilla: upload isi deploy/vendor/ ke htdocs/vendor/
+   d. Upload gambar portofolio ke htdocs/portfolio-assets/
+
+3) BUAT .env DI htdocs/
+   - File Manager tak bisa buat dotfile: buat env.txt lalu rename jadi .env,
+     atau pakai FileZilla.
+   - Isi dari .env.example: APP_KEY (php artisan key:generate),
+     APP_URL=domain, DB_*, MAIL_*, RECAPTCHA_*.
+
+4) MIGRASI DATABASE
+   - Buka: https://farshalaravel.free.nf/migrate.php
+   - Kalau pernah gagal: bersihkan tabel lama di phpMyAdmin lalu migrate ulang.
+   - Sukses -> login admin / admin. HAPUS migrate.php!
+
+5) HAPUS STRUKTUR LAMA (jika sebelumnya /laravel-crud)
+   - Hapus folder htdocs/laravel-crud/ di server supaya tidak bentrok.
+
+6) SELESAI
+   - farshalaravel.free.nf            -> portofolio
+   - farshalaravel.free.nf/login      -> CRUD login
+
+Detail & troubleshooting: baca deploy/README-DEPLOY.md
+================================================================

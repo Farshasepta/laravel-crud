@@ -1,5 +1,7 @@
 # Sistem CRUD - Panduan Deploy ke InfinityFree
 
+> **Catatan:** dokumen ini versi lama. Panduan terbaru dan lengkap ada di [DEPLOY.md](DEPLOY.md).
+
 Aplikasi ini adalah **Laravel 12** dengan AdminLTE 3 (Bootstrap 4).
 
 ---

@@ -1,0 +1,27 @@
+# Build context Vercel (container/FrankenPHP)
+.git
+.github
+.gitignore
+.vscode
+.idea
+node_modules
+vendor
+*.zip
+deploy
+tests
+.phpunit.result.cache
+phpunit.xml
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Artifact lokal yang tidak perlu masuk image
+storage/logs/*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+bootstrap/cache/*.php
+public/hot
+public/build

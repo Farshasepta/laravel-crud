@@ -1,6 +1,7 @@
 # Sistem CRUD
 
 > Panduan deploy lengkap (InfinityFree, cPanel, VPS): lihat [DEPLOY.md](DEPLOY.md).
+> Deploy ke Vercel (container/FrankenPHP): lihat [DEPLOY_VERCEL.md](DEPLOY_VERCEL.md).
 
 Aplikasi CRUD berbasis **Laravel 12** dengan UI **AdminLTE 3 (Bootstrap 4)** untuk mengelola:
 - **Barang** (dengan auto-generate barcode Code128 + filter tanggal)
